@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>training studio Template</title>
+    <!-- Icon for links  -->
+    <link rel="icon" href="https://media.istockphoto.com/id/876895654/photo/white-silhouette-strenge-man-on-the-black-background.jpg?s=1024x1024&w=is&k=20&c=fZhCd90HbA0UhqbJVvCkML5dlGI_8SBY4UnYrJ-8sIg=" />
+
+    <!-- Fontawesom  links  -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <!-- Main css link -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header area  -->
+     <header>
+        <div class=" container flex-mobile-header">
+             <!--  logo-mobkle  webstie  -->
+             <h1><a class="logo" href="#">training <em>studio</em></a></h1>
+              <!-- Icons for bars and close -->
+        <div class="hambuger">
+           
+            <l class="fa-solid fa-bars" data-visible="true"></l>
+      <l class="fa-solid fa-close" data-visible="false"></l>
+      </div>
+
+        </div>
+       
+        <!-- Desktop menus  -->
+        <nav class="container desktop-menu">
+            
+                <!-- left side for logo webstie  -->
+                 <h1><a class="logo" href="#">training <em>studio</em></a></h1>
+
+                 <!-- right side for menu-links  -->
+               
+                    <ul id="right-side" class="menu-links">
+                        <li><a href="#" class="home">Home</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">classes</a></li>
+                        <li><a href="#">schedules</a></li>
+                        <li><a href="#">contact</a></li>
+                        <li><a href="#" class="sign">sign up</a></li>
+                      </ul>
+               
+            
+        </nav>
+        <!-- Mobile menus -->
+        <nav class="mobile-menu" data-visible="false">
+            <ul  class="menu-links">
+                <li><a href="#" class="home">Home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">classes</a></li>
+                <li><a href="#">schedules</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#" class="sign">sign up</a></li>
+              </ul>
+        </nav>
+     </header>
+    
+     <!-- javascript  -->
+     <script>
+        const hamburger = document.querySelector('.hambuger');
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const icons = document.querySelectorAll(".fa-solid");
+  
+        hamburger.addEventListener("click", function (event) {
+            const isVisible = mobileMenu.getAttribute('data-visible');
+            if (isVisible == "true") {
+                // qari hiding
+                mobileMenu.setAttribute('data-visible', "false");
+                icons[0].setAttribute('data-visible', "true");
+                icons[1].setAttribute('data-visible', "false");
+            } else if (isVisible == "false") {
+                // soo bandhig showing
+                mobileMenu.setAttribute('data-visible', "true");
+                icons[0].setAttribute('data-visible', "false");
+                icons[1].setAttribute('data-visible', "true");
+            }
+        });
+  
+  
+    </script>
+</body>
+</html>
