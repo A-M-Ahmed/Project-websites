@@ -5,6 +5,33 @@
   box-sizing: border-box;
 }
 /* common css */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-mute-button {
+  display: none !important;
+}
+
+/* For other browsers */
+
+
+video::cue {
+  display: none;
+}
+
 :root {
   --colors: #ed563b;
   --white-orang-bgd: #f9735b;
@@ -674,7 +701,7 @@ footer .text-btn {
     padding-block: 2rem;
   }
   .contact-form form {
-    background-color: #fff;
+    background-color: #fff !important;
     
     padding-block: 2rem;
     grid-template-columns: 1fr;
