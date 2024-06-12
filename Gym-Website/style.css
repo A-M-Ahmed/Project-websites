@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
-  padding: 0;
+  padding: 0 ;
   box-sizing: border-box;
 }
 /* common css */
 :root {
   --colors: #ed563b;
+  --white-orang-bgd: #f9735b;
 }
 body {
   font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -19,13 +23,23 @@ body {
 a {
   text-decoration: none;
   text-transform: uppercase;
+  transition: transform 0.3s ease-in-out;
+}
+a:hover {
+  /* transform: translate(20px,10px); */
+  transform: scale(1.1);
+}
+em {
+  color: #ed563b;
+  font-style: normal;
 }
 
 /* =========================part 1 header style ================================================================= */
 header {
   height: 5rem;
-  background-color: rgba(74, 61, 61, 0.793);
-  /* color: #212529; */
+  background-color: #fafaf6;
+  position: sticky;
+  top: 0;
 }
 .desktop-menu {
   height: 100%;
@@ -37,14 +51,12 @@ header {
 /* logo style  */
 .logo {
   font-size: 2rem;
-  color: white;
+
   font-weight: 800;
   line-height: 5rem;
+  color: #212529;
 }
-.logo em {
-  color: #ed563b;
-  font-style: normal;
-}
+
 /* right side for menu links  */
 .menu-links {
   display: flex;
@@ -59,13 +71,22 @@ header {
   padding-inline: 1.25rem;
   font-weight: 600;
   font-size: 0.8125rem;
-  transition: color 0.3s ease-in-out;
+  transition: color  0.3s ease-in-out;
+  color: #212529;
+}
+.menu-links li{
+  transition: transform 0.3s ease-in-out;
+}
+.menu-links li:hover{
+  transform: scale(1.1);
+
 }
 .menu-links .home {
   color: var(--colors) !important ;
 }
 .menu-links a:hover {
   color: var(--colors) !important;
+  
 }
 .menu-links a.sign {
   background-color: var(--colors);
@@ -76,6 +97,391 @@ header {
 .flex-mobile-header,
 .mobile-menu {
   display: none;
+}
+
+/* ===========Part 2 hero secton ================== */
+.hero-section {
+  height: calc(100vh - 5rem);
+  display: flex;
+  flex-direction: column;
+}
+.hero-section video {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  object-fit: cover;
+  position: relative;
+}
+.hero-section .hero {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 5rem);
+
+  width: 100%;
+  gap: 1.75rem;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+.hero-section .hero h6 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.03125rem;
+}
+.hero h2 {
+  font-size: 5.25rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.0625rem;
+}
+.btn {
+  background-color: var(--colors);
+  color: #f7f7f7;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.btn:hover {
+  background-color: #f9735b;
+}
+
+/* ===========Part 3 choose program ========== */
+.section-program {
+  margin-bottom: 5rem;
+}
+.choose-program {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.choose-program .info-program {
+  max-width: 33.75rem;
+  margin-top: 8.75rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+.info-program h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.03125rem;
+  color: #232d39;
+}
+.info-program img {
+  margin-block: 1.25rem;
+}
+.info-program p {
+  font-size: 0.875rem;
+  color: #7a7a7a;
+  line-height: 1.5625rem;
+}
+.grid-boxs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.875rem;
+}
+.parent-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+}
+.grid-boxs .child-box {
+  display: flex;
+  gap: 1.875rem;
+}
+.grid-boxs .child-box .image {
+  /* background: url('https://templatemo.com/templates/templatemo_548_training_studio/assets/images/features-first-icon.png') center/cover no-repeat; */
+  height: 6.25rem;
+  width: 6.25em;
+  border-radius: 0.5rem;
+  /* margin-right: 1.8rem; */
+}
+img {
+  max-width: 100%;
+}
+.child-box .content h4 {
+  color: #232d39;
+  font-weight: 600;
+  letter-spacing: 0.015625rem;
+  margin-bottom: 0.4375rem;
+  font-size: 1.2rem;
+}
+.child-box .content p {
+  font-size: 0.875rem;
+  color: #7a7a7a;
+  line-height: 1.5625rem;
+}
+.child-box .content a:first-child {
+  color: #007bff;
+  text-transform: capitalize;
+}
+.child-box .content .text-btn {
+  color: var(--colors);
+  margin-top: 0.4375rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* pART 4  members style  */
+.section-members {
+  background: url("https://templatemo.com/templates/templatemo_548_training_studio/assets/images/cta-bg.jpg")
+    center/cover no-repeat;
+  height: 26.23125rem;
+  display: flex;
+}
+.section-members .member {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.member h2 {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: 0.0625em;
+  text-align: center;
+}
+.member p {
+  font-size: 1.563rem;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 0.9375rem;
+  margin-bottom: 2rem;
+}
+/* ============ Part 5 our Classes section============ */
+.classes-section {
+  margin-bottom: 8.75rem;
+}
+.grid-classes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+
+  gap: 1.8rem;
+}
+.left-classes {
+  padding-inline: 0.9375rem;
+  grid-column: 1/2;
+}
+.left-classes .classes-context .list-class {
+  padding-inline: 0.9375rem;
+}
+
+.list-class li {
+  list-style: none;
+  /* padding: 1.5rem; */
+  background-color: #fff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+  border-radius: 0.75rem;
+  transition: transform 0.5s ease-in-out;
+}
+.list-class li:hover {
+  transform: translate(20px, 0px);
+}
+
+.list-class a {
+  font-size: 1.1875rem;
+  padding: 1.5rem 3.8rem;
+  white-space: nowrap;
+
+  font-weight: 600;
+  letter-spacing: 0.03125rem;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  align-items: center;
+  color: #232d39;
+}
+.list-class a img {
+  width: 35px;
+  height: 35px;
+  margin-right: 1.25rem;
+}
+.list-class a:hover {
+  color: var(--colors);
+}
+.list-class .btn {
+  color: #f7f7f7;
+  background-color: var(--colors);
+  border-radius: 0.75rem;
+}
+.list-class .btn:hover {
+  background-color: var(--white-orang-bgd);
+  color: #e1dfdf;
+}
+.right-classes {
+  grid-column: 2/4;
+}
+.single-class {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.single-class img {
+  border-radius: 0.35rem;
+}
+.single-class h2 {
+  font-size: 1.4375rem;
+  font-weight: 700;
+  letter-spacing: 0.03125rem;
+  color: #232d39;
+}
+.single-class p {
+  color: #7a7a7a;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* ========Part 6 schedule seciton =============== */
+.schedule-section {
+  background: url("https://templatemo.com/templates/templatemo_548_training_studio/assets/images/schedule-bg.jpg")
+    top/cover no-repeat;
+}
+.section-content {
+  padding-bottom: 8.75rem;
+}
+.days-lists {
+  height: 4rem;
+}
+.days-lists ul {
+  text-align: center;
+}
+.days-lists ul li {
+  display: inline;
+  list-style: none;
+  color: #fff;
+  letter-spacing: 0.03rem;
+  word-spacing: 0.2rem;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font: weight 1rem;
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.4s ease-in-out;
+}
+.days-lists ul li:hover {
+  color: var(--colors);
+  cursor: pointer;
+}
+table {
+  width: 100%;
+  border: 1px solid white;
+  border-collapse: collapse;
+  margin-inline: auto;
+}
+th,
+td {
+  border: 1px solid white;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* =============Part 7 Expert training ========= */
+
+.expert-trainer .container .parent-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(21.875rem, 1fr));
+  gap: 1.875rem;
+}
+.expert-trainer .container .parent-box .child-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  gap: 1.25rem;
+}
+.socale-meida {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.9rem;
+}
+.socale-meida a i {
+  color: #212529;
+  transition: color, transform 0.3s ease-in-out;
+}
+.socale-meida a i:hover {
+  color: var(--colors);
+  transform: translate(2px, 0px);
+}
+
+/* ========= Part 8 Contact section ======== */
+.section-contact {
+  margin-top: 8.75rem;
+}
+.map-part {
+  display: flex;
+  height: 80vh;
+}
+.section-contact .map-part iframe {
+  height: 37.5rem;
+  width: 43.5rem;
+}
+.contact-form {
+  background: url("https://templatemo.com/templates/templatemo_548_training_studio/assets/images/contact-bg.jpg")
+    top / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43.5rem;
+  height: 37.5rem;
+}
+.contact-form form {
+  background-color: #fff;
+  padding: 2.5rem;
+  display: grid;
+  align-items: center;
+  border-radius: 0.4rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 12px 10px;
+  color: #212529;
+  border: 1px solid #b7b3b3b7;
+  background-color: white;
+  border-radius: 0.1rem;
+  outline: none;
+}
+input:nth-child(3) {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+}
+.contact-form form textarea {
+  grid-column: 1/-1;
+  grid-row: 3/4;
+}
+.contact-form form button {
+  border: none;
+}
+.section-footer {
+  padding-block: 1.875rem;
+  text-align: center;
+  color: #232d39;
+  font-size: 1.25rem;
+  width: 100%;
+  display: block;
+}
+footer .text-btn {
+  color: var(--colors);
 }
 
 /* TAblets  */
@@ -91,11 +497,15 @@ header {
   }
 
   header {
-    background-color: #fafaf6;
+    background-color: #fafaf6 !important;
 
-    padding-inline: 0.9375rem;
+    padding-inline: 0.7375rem;
 
     height: 7rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
   }
   .flex-mobile-header {
     display: flex;
@@ -106,7 +516,7 @@ header {
     position: relative;
     background-color: #fafaf6;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
   }
   .flex-mobile-header h1 a {
     color: #1e1e1e;
@@ -140,12 +550,18 @@ header {
   }
   .mobile-menu {
     display: flex;
+
     flex-direction: column;
     position: absolute;
     top: -18rem;
     width: 92%;
     transform: translateY(0%);
     transition: transform 0.3s ease-in-out;
+    background-color: #fafaf6;
+    margin-inline: 3px;
+  }
+  .mobile-menu .navigation {
+    /* padding: 0 3px; */
   }
   .mobile-menu[data-visible="false"] {
     transform: translateY(100%);
@@ -153,7 +569,7 @@ header {
   .mobile-menu .menu-links {
     flex-direction: column;
     background-color: #c0bcbc26;
-    width: 97%;
+    /* width: 97%; */
   }
   .mobile-menu li {
     width: 100%;
@@ -174,5 +590,107 @@ header {
     color: #232d29;
     line-height: 3.124rem;
     font-weight: 500;
+  }
+
+  /* ====== Part 2 for hero-seciotn responsive =====   */
+  .hero-section {
+    height: calc(100vh - 7rem);
+  }
+  .hero-section video {
+    height: calc(100% - 0.5rem);
+  }
+
+  .hero-section .hero h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  /* ==========Part 3 section program choose ======== */
+  .grid-boxs {
+    grid-template-columns: 1fr;
+  }
+  /* ======== Part 4 Members  */
+  .member h2 {
+    font-size: 2.25rem;
+    letter-spacing: 0.0425em;
+  }
+  .member p {
+    font-size: 1rem;
+  }
+  /* ========Part 4 section classes styel for responsive ==== */
+  .grid-classes {
+    grid-template-columns: 1fr;
+  }
+  .left-classes {
+    width: 22rem;
+  }
+  .list-class a {
+    font-size: 0.8rem;
+    padding: 1.5rem 3rem;
+  }
+  .right-classes {
+    grid-column: 1/2;
+  }
+
+  .single-class {
+    width: 22rem;
+  }
+  /* =========== Part 6 for schedule ========== */
+  table {
+    margin-top: 1.252rem;
+  }
+
+  th,
+  td {
+    padding: 1.25rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+  /* Part 8 for contact section  */
+  .section-contact {
+    margin-top: 4rem;
+  }
+  .map-part {
+    flex-direction: column;
+
+  }
+  .section-contact .map-part iframe {
+    width: 24rem;
+    height: 28.3rem;
+  }
+  .contact-form {
+    width: 24rem;
+    height: 28.3rem;
+    padding-block: 2rem;
+  }
+  .contact-form form {
+    
+    padding-block: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+ 
+
+  input:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1/2;
+  }
+  input:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2/3;
+  }
+  input:nth-child(3) {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    /* margin-bottom: 3rem; */
+  }
+
+  .contact-form form textarea {
+    grid-column: 1/-1;
+    grid-row: 4/8;
+  }
+  .section-footer {
+    font-size: 1rem;
   }
 }
