@@ -128,7 +128,7 @@ header {
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.9)
+    rgba(0, 0, 0, 0.7)
   );
 }
 .hero-section .hero h6 {
@@ -599,6 +599,15 @@ footer .text-btn {
   .hero-section video {
     height: calc(100% - 0.5rem);
   }
+  .hero-section .hero {
+    height: calc(103vh - 7rem);
+    
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.9)
+  );
+  }
 
   .hero-section .hero h2 {
     font-size: 3rem;
@@ -665,6 +674,7 @@ footer .text-btn {
     padding-block: 2rem;
   }
   .contact-form form {
+    background-color: #fff;
     
     padding-block: 2rem;
     grid-template-columns: 1fr;
